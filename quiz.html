@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AIML Quiz</title>
+   <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a CSS file for styling -->
+   <style>
+      /* Gradient background */
+      body {
+         background: linear-gradient(120deg, #f6d365, #fda085);
+         font-family: 'Arial', sans-serif;
+         color: #333;
+         margin: 0;
+         padding: 0;
+      }
+
+      /* Centered heading */
+      h1 {
+         text-align: center;
+         font-size: 2em;
+         padding: 20px;
+         color: #fff;
+         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Certificate styles */
+      .certificate {
+         display: none; /* Hidden by default */
+         text-align: center;
+         background: #f6f6f6;
+         padding: 30px;
+         border: 2px solid #ddd;
+         border-radius: 10px;
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+         margin: 30px;
+         position: relative;
+      }
+
+      /* Quiz container styles */
+      .quiz-container {
+         max-width: 800px;
+         margin: 30px auto;
+         background: rgba(255, 255, 255, 0.9);
+         padding: 20px;
+         border-radius: 10px;
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Question styles */
+      .question {
+         margin-bottom: 20px;
+      }
+
+      /* Submit button styles */
+      button {
+         background-color: #3498db;
+         color: white;
+         border: none;
+         padding: 10px 20px;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background-color 0.3s, transform 0.2s;
+      }
+
+      button:hover {
+         background-color: #2980b9;
+         transform: scale(1.05);
+      }
+
+      /* Result display */
+      #result {
+         text-align: center;
+         font-size: 1.2em;
+         margin-top: 20px;
+      }
+   </style>
+</head>
+<body>
+
+<h1>Artificial Intelligence and Machine Learning Quiz</h1>
+
+<!-- Quiz content -->
+<div class="quiz-container">
+   <div class="question">
+      <p>1. What does AIML stand for?</p>
+      <input type="radio" name="q1" value="a"> a) Artificial Intelligence and Machine Learning<br>
+      <input type="radio" name="q1" value="b"> b) Algorithms and Intelligent Machines<br>
+      <input type="radio" name="q1" value="c"> c) Automated Information Management Language<br>
+   </div>
+
+   <div class="question">
+      <p>2. Which technique is used to mimic the functioning of the human brain in AI?</p>
+      <input type="radio" name="q2" value="a"> a) Deep Learning<br>
+      <input type="radio" name="q2" value="b"> b) Reinforcement Learning<br>
+      <input type="radio" name="q2" value="c"> c) Genetic Algorithms<br>
+   </div>
+
+   <div class="question">
+      <p>3. What is the purpose of a neural network in machine learning?</p>
+      <input type="radio" name="q3" value="a"> a) To process text data<br>
+      <input type="radio" name="q3" value="b"> b) To recognize patterns and make predictions<br>
+      <input type="radio" name="q3" value="c"> c) To perform complex calculations<br>
+   </div>
+
+   <div class="question">
+      <p>4. What is the primary goal of supervised learning?</p>
+      <input type="radio" name="q4" value="a"> a) Classification and regression<br>
+      <input type="radio" name="q4" value="b"> b) Clustering<br>
+      <input type="radio" name="q4" value="c"> c) Reinforcement<br>
+   </div>
+
+   <div class="question">
+      <p>5. In machine learning, what does SVM stand for?</p>
+      <input type="radio" name="q5" value="a"> a) Support Vector Machine<br>
+      <input type="radio" name="q5" value="b"> b) Simple Vector Machine<br>
+      <input type="radio" name="q5" value="c"> c) Supervised Vector Model<br>
+   </div>
+
+   <div class="question">
+      <p>6. What is overfitting in machine learning?</p>
+      <input type="radio" name="q6" value="a"> a) When the model performs well on training data but poorly on unseen data<br>
+      <input type="radio" name="q6" value="b"> b) When the model performs poorly on both training and unseen data<br>
+      <input type="radio" name="q6" value="c"> c) When the model performs well on both training and unseen data<br>
+   </div>
+
+   <div class="question">
+      <p>7. Which algorithm is used for dimensionality reduction in machine learning?</p>
+      <input type="radio" name="q7" value="a"> a) K-Nearest Neighbors<br>
+      <input type="radio" name="q7" value="b"> b) Principal Component Analysis (PCA)<br>
+      <input type="radio" name="q7" value="c"> c) Decision Trees<br>
+   </div>
+
+   <div class="question">
+      <p>8. What is the purpose of regularization in machine learning?</p>
+      <input type="radio" name="q8" value="a"> a) To penalize large coefficients and prevent overfitting<br>
+      <input type="radio" name="q8" value="b"> b) To increase the complexity of the model<br>
+      <input type="radio" name="q8" value="c"> c) To speed up the training process<br>
+   </div>
+
+   <div class="question">
+      <p>9. What is the activation function commonly used in neural networks for binary classification problems?</p>
+      <input type="radio" name="q9" value="a"> a) ReLU (Rectified Linear Activation)<br>
+      <input type="radio" name="q9" value="b"> b) Sigmoid<br>
+      <input type="radio" name="q9" value="c"> c) Tanh (Hyperbolic Tangent)<br>
+   </div>
+
+   <div class="question">
+      <p>10. What is the difference between classification and regression in machine learning?</p>
+      <input type="radio" name="q10" value="a"> a) Classification predicts categorical labels, while regression predicts continuous values.<br>
+      <input type="radio" name="q10" value="b"> b) Regression predicts categorical labels, while classification predicts continuous values.<br>
+      <input type="radio" name="q10" value="c"> There is no difference between classification and regression.<br>
+   </div>
+
+   <button onclick="submitQuiz()">Submit Quiz</button>
+</div>
+
+<div id="result"></div>
+
+<!-- Certificate section -->
+<div id="certificate" class="certificate">
+   <h2>Certificate of Completion</h2>
+   <p>Congratulations, <span id="username"></span>!</p>
+   <p>You have successfully passed the AIML Quiz.</p>
+   <p>Your score is <span id="final-score"></span> out of 10.</p>
+</div>
+
+<script>
+function submitQuiz() {
+   // Collect user answers and calculate the score
+   var score = 0;
+   var answerKey = {
+      q1: "a",
+      q2: "a",
+      q3: "b",
+      q4: "a",
+      q5: "a",
+      q6: "a",
+      q7: "b",
+      q8: "a",
+      q9: "b",
+      q10: "a"
+   };
+
+   for (var key in answerKey) {
+      var selectedOption = document.querySelector(`input[name="${key}"]:checked`);
+      if (selectedOption && selectedOption.value === answerKey[key]) {
+         score++;
+      }
+   }
+
+   // Display the result
+   var resultDisplay = document.getElementById('result');
+   resultDisplay.innerHTML = "Your score is: " + score + " out of 10.";
+
+   // If the score is greater than 5, show the certificate
+   if (score > 5) {
+      var certificate = document.getElementById('certificate');
+      var username = prompt("Enter your name for the certificate:");
+      document.getElementById('username').innerText = username; /* Insert the name */
+      document.getElementById('final-score').innerText = score; /* Insert the final score */
+      certificate.style.display = 'block'; /* Show the certificate */
+   }
+}
+</script>
+
+</body>
+</html>
